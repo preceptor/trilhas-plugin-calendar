@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <name>Calendar</name>
+    <description>Event annotations</description>
+    <author>Preceptor Educação a Distância</author>
+    <version>1.0</version>
+    <license>GPL 3</license>
+    <keywords>calendar, event, annotarions, warning</keywords>
+    <url>http://www.preceptoread.com.br</url>
+    
+    <files>
+        <sql>
+            <install>data/sql/install.sql</install>
+            <uninstall>data/sql/uninstall.sql</uninstall>
+        </sql>
+        <languages>
+            <language name="pt_BR">data/language/pt_BR/calendar.csv</language>
+        </languages>
+    </files>
+    
+    <access>
+        <resource role="identified">calendar/index/index</resource>
+        <resource role="teacher">calendar/index/form</resource>
+        <resource role="teacher">calendar/index/save</resource>
+        <resource role="teacher">calendar/index/delete</resource>
+    </access>
+    
+    <widget>
+        <item position="main_index" order="1">calendar/index/widget</item>
+        <item position="main_dashboard">calendar/index/dashboard</item>
+    </widget>
+</configuration>
