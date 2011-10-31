@@ -55,11 +55,12 @@ class Calendar_Form_Form extends Zend_Form
                     ->addValidators($validators['description'])
                     ->addFilters($filters['description'])
                     ->setAllowEmpty(false)
+                    ->setAttrib('class', 'xxlarge')
                     ->setAttrib('rows', 7);
 
         $begin = new Zend_Form_Element_Text('begin');
         $begin->setLabel('Begin')
-              ->setAttrib('class', 'date')
+              ->setAttrib('class', 'date small')
               ->addFilters($filters['begin'])
               ->addValidators($validators['begin'])
               ->setAllowEmpty(false)
@@ -67,7 +68,7 @@ class Calendar_Form_Form extends Zend_Form
 
         $end = new Zend_Form_Element_Text('end');
         $end->setLabel('End')
-            ->setAttrib('class', 'date')
+            ->setAttrib('class', 'date small')
             ->addFilters($filters['end'])
             ->getPluginLoader('filter')->addPrefixPath('Tri_Filter', 'Tri/Filter');
 
@@ -76,6 +77,6 @@ class Calendar_Form_Form extends Zend_Form
         $this->addElement($description);
         $this->addElement($begin);
         $this->addElement($end);
-        $this->addElement('submit', 'Save');
+        $this->addElement('submit', 'Save', array('class' => 'btn primary'));
     }
 }

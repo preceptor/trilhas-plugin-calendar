@@ -8,7 +8,7 @@
             <div class="content">
                 <?php if ($this->isAllowed(array('module' => 'calendar','controller' => 'index','action' => 'form'))):?>
                     <div class="aright">
-                        <a href="calendar/index/form"><?php echo $this->translate('New')?></a>
+                        <a class="btn primary" href="calendar/index/form"><?php echo $this->translate('New')?></a>
                     </div>
                 <?php endif;?>
                 <?php if(count($this->data)):?>
@@ -32,8 +32,10 @@
                     <?php endforeach;?>
                             </ul></div>
                     <div class="clear">
-                        <a href="calendar"><?php echo $this->translate('View all');?></a>
+                        <a class="btn" href="calendar"><?php echo $this->translate('View all');?></a>
                     </div>
+                <?php else:?>
+                    <p><?php echo $this->translate('there are no records') ?></p>
                 <?php endif; ?>
             </div>
         </div>
